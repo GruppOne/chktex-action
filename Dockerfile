@@ -20,4 +20,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD [ "python3", "/tmp/action/run_action.py" ]
+ENTRYPOINT [ "python3", "/tmp/action/run_action.py" ]
