@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "tag image and push to GitHub Packages",
+      "detail": "you need to already be authenticated with a PAT",
+      "type": "shell",
+      "command": ".vscode/publish-package.ps1 -imageId ${input:IMAGE_ID} -fullTag ${input:TAG}",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "IMAGE_ID",
+      "description": "Id of the image being tagged",
+      "type": "promptString"
+    }
+    {
+      "id": "TAG",
+      "description": "Tag for the image being pushed",
+      "type": "promptString",
+      "default": "...:..."
+    }
+  ]
+}
